@@ -1,0 +1,38 @@
+[Unit]
+Description=Briefcase MCP status mirror updater (v2, multi-target)
+Documentation=https://github.com/badnewsgoonies-dot/briefcase-mcp-public-status
+After=network-online.target
+Wants=network-online.target
+# Start after the MCP service so 127.0.0.1:8765 is reachable on boot
+After=briefcase-mcp-bench.service
+Wants=briefcase-mcp-bench.service
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/briefcase-gist-updater.env
+# Updater v2 is pulled fresh from the versioned gist URL on each start so
+# that pushing a new gist revision + systemctl restart is the deploy flow.
+ExecStart=/usr/bin/python3 -c "import urllib.request; exec(urllib.request.urlopen('https://gist.githubusercontent.com/badnewsgoonies-dot/2234b9d35c8f61f75f197d670a86120c/raw/gist_updater.py').read())"
+Restart=always
+RestartSec=30s
+# Graceful stop
+KillMode=mixed
+TimeoutStopSec=10
+
+# Hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+
+# Logging
+StandardOutput=append:/var/log/briefcase-gist-updater.log
+StandardError=append:/var/log/briefcase-gist-updater.log
+
+[Install]
+WantedBy=multi-user.target
