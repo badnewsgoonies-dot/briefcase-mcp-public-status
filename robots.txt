@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://badnewsgoonies-dot.github.io/briefcase-mcp-public-status/sitemap.xml
