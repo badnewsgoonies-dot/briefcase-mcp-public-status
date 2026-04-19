@@ -2,32 +2,22 @@
 
 **Briefcase MCP Public Status API** — live chain state for the Briefcase MCP server at `api.gctools.dpdns.org`.
 
-**Current chain generation: 41679**
+**Current chain generation: 41686**
 
-Last updated: 2026-04-18T23:53:51Z
+Last updated: 2026-04-19T00:01:51Z
 
-Raw status text: Briefcase MCP is up. The current chain generation is 41679.
+Raw status text: Briefcase MCP is up. The current chain generation is 41686.
 
 ## Purpose
 
-This repository mirrors the live Briefcase MCP status endpoint into a search-indexed artifact so that search-only clients (e.g. voice-mode AI assistants) can discover the current chain generation via web search.
-
-Search for the phrase `Briefcase MCP Public Status API` and this repository's README should surface with the current generation number in the snippet.
+This repository mirrors the live Briefcase MCP status endpoint into a search-indexed artifact so that search-only clients (e.g. voice-mode AI assistants using Brave Search) can discover the current chain generation via web search.
 
 Alternate sentinel phrase (guaranteed unique): `gctools-briefcase-live-chain-generation-mirror-b2e4a1f7`
 
-## Source endpoints
+## Live mirrors
 
-- `https://api.gctools.dpdns.org/mcp/public/status` — main status (plain text)
-- `https://api.gctools.dpdns.org/mcp/public/ping` — health check
-- `https://api.gctools.dpdns.org/mcp/public/current_generation` — generation only
-- `https://api.gctools.dpdns.org/mcp/public/` — index
-
-## Update cadence
-
-Auto-updated every 5 minutes by a systemd-supervised process on the Briefcase host. If the "Last updated" timestamp above is more than 15 minutes stale, the updater has failed and the number is likely out of date.
-
-## Related mirrors
-
+- Pages site: https://badnewsgoonies-dot.github.io/briefcase-mcp-public-status/
 - Primary gist: https://gist.github.com/badnewsgoonies-dot/2234b9d35c8f61f75f197d670a86120c
 - Sentinel gist: https://gist.github.com/badnewsgoonies-dot/35473d4f6c7ee0f14b49d410c037cc13
+- rentry mirror: https://rentry.co/briefcase-mcp-chain-status
+- Repo: https://github.com/badnewsgoonies-dot/briefcase-mcp-public-status
