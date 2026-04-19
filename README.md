@@ -2,11 +2,11 @@
 
 **Briefcase MCP Public Status API** — live chain state for the Briefcase MCP server at `api.gctools.dpdns.org`.
 
-**Current chain generation: 41729**
+**Current chain generation: 41732**
 
-Last updated: 2026-04-19T00:42:25Z
+Last updated: 2026-04-19T00:47:29Z
 
-Raw status text: Briefcase MCP is up. The current chain generation is 41729.
+Raw status text: Briefcase MCP is up. The current chain generation is 41732.
 
 ## Purpose
 
